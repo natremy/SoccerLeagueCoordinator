@@ -5,9 +5,9 @@
 // Step 1. A list of all the players and their information
 
 
-let player1: [String : Any] = ["name": "Joe Smith", "height": 42.0, "prevExperience": true, "nameOfGuardians": "Jim and Jan Smith"]
-let player2: [String : Any] = ["name": "Jill Tanner", "height": 36.0, "prevExperience": true, "nameOfGuardians": "Clara Tanner"]
-let player3: [String : Any] = ["name": "Bill Bon", "height": 43.0, "prevExperience": true, "nameOfGuardians": "Sara and Jenny Bon"]
+let player1: [String: Any] = ["name": "Joe Smith", "height": 42.0, "prevExperience": true, "nameOfGuardians": "Jim and Jan Smith"]
+let player2: [String: Any] = ["name": "Jill Tanner", "height": 36.0, "prevExperience": true, "nameOfGuardians": "Clara Tanner"]
+let player3: [String: Any] = ["name": "Bill Bon", "height": 43.0, "prevExperience": true, "nameOfGuardians": "Sara and Jenny Bon"]
 let player4: [String: Any] = ["name": "Eva Gordon", "height": 45.0, "prevExperience": false, "nameOfGuardians": "Wendy and Mike Gordon"]
 let player5: [String: Any] = ["name": "Matt Gill", "height": 40.0, "prevExperience": false, "nameOfGuardians": "Charles and Sylvia Gill"]
 let player6: [String: Any] = ["name": "Kimmy Stein", "height": 41.0, "prevExperience": false, "nameOfGuardians": "Bill and Hilary Stein"]
@@ -89,7 +89,12 @@ func teamLetters(team: [[String: Any]], date: String, teamName: String) {
         let letter = ("Dear \(player["nameOfGuardians"] as! String), \(player["name"] as! String) has been selected to play for the \(teamName) in the upcoming season. He is expected to be at the field for our first practice on \(date).")
         letters.append(letter)
     }
-    print(letters)
+    
+    // added for/in loop to reformat letters
+    for letter in letters {
+    print(letter)
+        print("")
+    }
 }
 
 print("SHARK LETTERS")
@@ -109,7 +114,6 @@ print("")
 print("RAPTOR LETTERS")
 print("")
 teamLetters(team: teamRaptors, date: "March 18, 1pm", teamName: "Raptors")
-
 
 
 
